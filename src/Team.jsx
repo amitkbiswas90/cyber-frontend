@@ -6,10 +6,12 @@ const Team = () => {
     const [cart, setCart] = useState([]);
     const budget = 10000000; 
 
+
     useEffect(() => {
         fetch('public/experts.json')
         .then(res=>res.json())
         .then(data => setExperts(data))
+        .catch(error => console.error('Error loading experts:', error));
     }, []);
 
     const handleAddToCart = (expert) => {
