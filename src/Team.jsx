@@ -2,7 +2,7 @@ import { useState } from "react";
 import expertData from './experts.json';
 
 const Team = () => {
-    const [experts, setExperts] = useState(expertData);
+    const [experts,] = useState(expertData);
     const [cart, setCart] = useState([]);
     const budget = 10000000; 
 
