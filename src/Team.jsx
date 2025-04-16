@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import expertData from './experts.json';
+
 
 const Team = () => {
     const [experts, setExperts] = useState([]);
@@ -7,7 +7,9 @@ const Team = () => {
     const budget = 10000000; 
 
     useEffect(() => {
-        setExperts(expertData);
+        fetch('public/experts.json')
+        .then(res=>res.json())
+        .then(data => setExperts(data))
     }, []);
 
     const handleAddToCart = (expert) => {
