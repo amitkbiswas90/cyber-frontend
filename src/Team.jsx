@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
+import expertData from './experts.json';
 
 const Team = () => {
-    const [experts, setExperts] = useState([]);
+    const [experts, setExperts] = useState(expertData);
     const [cart, setCart] = useState([]);
     const budget = 10000000; 
 
 
-    useEffect(() => {
-        fetch('public/experts.json')
-        .then(res=>res.json())
-        .then(data => setExperts(data))
-        .catch(error => console.error('Error loading experts:', error));
-    }, []);
+    // useEffect(() => {
+    //     fetch('public/experts.json')
+    //     .then(res=>res.json())
+    //     .then(data => setExperts(data))
+    //     .catch(error => console.error('Error loading experts:', error));
+    // }, []);
 
     const handleAddToCart = (expert) => {
         if (cart.find(e => e.id === expert.id)) return;
